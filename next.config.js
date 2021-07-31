@@ -1,14 +1,20 @@
-module.exports = {
-  webpack: (config, { dev, isServer }) => {
-    // Replace React with Preact only in client production build
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      });
-    }
+const withPWA = require('next-pwa');
 
-    return config;
+module.exports = withPWA({
+  webpack5: true,
+  pwa: {
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
   },
-};
+  env: {
+    siteTitle: 'Doggy Stickers',
+    siteDescription: 'Get some Doggy Stickers!',
+    siteKeywords: 'dog, stickers, fun',
+    siteUrl: 'https://www.doggystickers.xyz',
+    siteImagePreviewUrl: '/images/main.jpg',
+    twitterHandle: '@deepwhitman'
+  },
+  images: {
+    domains: ['cdn.shopify.com'],
+  },
+})
