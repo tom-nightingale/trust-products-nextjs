@@ -33,7 +33,7 @@ function CartPage() {
               
               <CartTable cart={cart} />
               
-              <div className="flex items-center justify-between w-full px-2">
+              <div className="flex flex-col items-center justify-between w-full px-2 md:flex-row">
                 <CheckOutButton webUrl={checkoutUrl} />
                 <BackToProductButton />
               </div>

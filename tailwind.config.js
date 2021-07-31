@@ -30,7 +30,11 @@ module.exports = {
           DEFAULT: '#d23527',
           dark: '#a72a1f',
         },
-      }
+      },
+      zIndex: {
+        "-10": "-10",
+        "-20": "-20",
+      },
     },
   },
   variants: {

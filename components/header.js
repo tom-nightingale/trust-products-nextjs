@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import FancyLink from '@/components/fancyLink'
 import Container from '@/components/container'
+import MobileMenu from '@/components/mobile-menu'
 import { useCartContext } from '@/context/Store'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
@@ -19,12 +20,20 @@ export default function Header() {
     setCartItems(numItems)
   }, [cart])
 
+  const navItems = [
+    'Home',
+    'Products',
+    'Shipping & Delivery',
+    'Cart',
+    'Contact'
+  ]
+
   return (
     <header className="">
 
-      <div className="fixed top-0 z-50 items-center justify-between hidden w-full text-xs tracking-widest text-white uppercase md:flex bg-primary-dark">
+      <div className="fixed top-0 z-50 flex items-center justify-end w-full text-xs tracking-widest text-white uppercase md:justify-between bg-primary-dark">
         
-        <p className="p-4">International shipping now available on all products!</p>
+        <p className="hidden p-4 md:block">International shipping now available on all products!</p>
         
         <Link
           href="/cart"
@@ -49,20 +58,21 @@ export default function Header() {
         
       <Container>
 
-        <div className="flex flex-wrap items-center justify-between py-12 md:pb-8 md:mt-12 md:py-12 ">
+        <div className="relative flex flex-wrap items-center justify-between py-4 pt-6 mt-12 sm:py-12 md:pb-8 md:py-12 ">
           
           
-          <div className="w-full text-center md:text-left md:w-7/12">
+          <div className="text-center sm:w-1/2 md:text-left md:w-5/12">
             <Link href="/" scroll={false}>
                 <a className="inline-block mx-auto leading-tight tracking-widest text-center uppercase md:text-left">
-                  {/* <span className="block text-lg font-black">Trust Precision Products</span>
-                  <span className="text-xs">Precision aftermarket motorbike parts</span> */}
-                  <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="w-[375px]" />
+                  <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="hidden sm:block w-[375px]" />
+                  <img src="/images/logo-mobile.svg" alt="Trust Precision Products Logo" className="block sm:hidden w-[100px]" />
                 </a>
             </Link>
           </div>
 
-          <nav className="justify-between hidden w-5/12 text-sm font-black tracking-widest uppercase lg:w-1/3 md:flex">
+          <MobileMenu navItems={navItems} />
+
+          <nav className="justify-between hidden w-6/12 text-sm font-black tracking-widest uppercase lg:flex">
             <Link href="/" scroll={false}>
               <a className="" aria-label="Home">
                 Home

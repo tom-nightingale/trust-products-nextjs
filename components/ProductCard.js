@@ -9,7 +9,6 @@ function ProductCard({ product }) {
   const price = product.node.variants.edges[0].node.price
 
   const imageNode = product.node.images.edges[0].node
-  console.log(imageNode);
 
   return (
     <Link
