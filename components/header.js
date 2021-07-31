@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header className="">
 
-      <div className="fixed top-0 z-50 flex items-center justify-between w-full text-xs tracking-widest text-white uppercase bg-primary-dark">
+      <div className="fixed top-0 z-50 items-center justify-between hidden w-full text-xs tracking-widest text-white uppercase md:flex bg-primary-dark">
         
         <p className="p-4">International shipping now available on all products!</p>
         
@@ -49,14 +49,15 @@ export default function Header() {
         
       <Container>
 
-        <div className="flex flex-wrap items-center justify-between py-12 pb-8 mt-12 md:py-12 ">
+        <div className="flex flex-wrap items-center justify-between py-12 md:pb-8 md:mt-12 md:py-12 ">
           
           
           <div className="w-full text-center md:text-left md:w-7/12">
             <Link href="/" scroll={false}>
                 <a className="inline-block mx-auto leading-tight tracking-widest text-center uppercase md:text-left">
-                  <span className="block text-lg font-black">Trust Precision Products</span>
-                  <span className="text-xs">Precision aftermarket motorbike parts</span>
+                  {/* <span className="block text-lg font-black">Trust Precision Products</span>
+                  <span className="text-xs">Precision aftermarket motorbike parts</span> */}
+                  <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="w-[375px]" />
                 </a>
             </Link>
           </div>
@@ -94,19 +95,20 @@ export default function Header() {
       <div className="bg-primary">
         <Container>
             <div className="flex flex-wrap text-xs text-center text-white">
-              <div className="hidden w-1/3 p-4 lg:p-6 lg:px-8 md:block">
-                <p className="font-black tracking-widest uppercase">Made with precision in the U.K.</p>
-                <p>Lorem ipsum dalor</p>
+
+              <div className="hidden w-1/3 p-4 lg:p-6 lg:px-8 xl:p-10 xl:px-16 md:block">
+                <p className="mb-1 text-sm font-black tracking-widest uppercase">Made with precision in the U.K.</p>
+                <p>Made in our Precision Engineering factory using the latest cutting edge machinery.</p>
               </div>
 
-              <div className="hidden w-1/3 p-4 border-l border-r lg:p-6 lg:px-8 border-white/25 md:block">
-                <p className="font-black tracking-widest uppercase">Express delivery options available</p>
-                <p>Lorem ipsum dalor</p>
+              <div className="hidden w-1/3 p-4 border-l border-r lg:p-6 lg:px-8 xl:p-10 xl:px-16 border-white/25 md:block">
+                <p className="mb-1 text-sm font-black tracking-widest uppercase">Express delivery options</p>
+                <p>Want faster delivery? We've got you covered with our express shipping options.</p>
               </div>
 
-              <div className="hidden w-1/3 p-4 lg:p-6 lg:px-8 md:block">
-                <p className="font-black tracking-widest uppercase">Worldwide shipping available</p>
-                <p>Lorem ipsum dalor</p>
+              <div className="hidden w-1/3 p-4 lg:p-6 lg:px-8 xl:p-10 xl:px-16 md:block">
+                <p className="mb-1 text-sm font-black tracking-widest uppercase">Worldwide shipping available</p>
+                <p>Don't worry if you're not in the U.K. We can ship our aftermarket products to your door!</p>
               </div>
               
             </div>
