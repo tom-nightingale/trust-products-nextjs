@@ -31,13 +31,13 @@ export default function Header() {
   return (
     <header className="">
 
-      <div className="fixed top-0 z-50 w-full uppercase bg-primary-dark">
+      <div className="fixed top-0 z-50 w-full uppercase bg-black bg-opacity-50">
 
         <Container>
 
-          <div className="flex items-center justify-center text-xs tracking-widest text-white md:justify-between">
+          <div className="flex items-center justify-center w-full px-6 text-xs tracking-widest text-white md:justify-between">
         
-            <p className="hidden p-4 md:block">International shipping now available on all products!</p>
+            <p className="hidden py-4 md:inline-block">International shipping now available on all products!</p>
             
             <Link
               href="/cart"
@@ -72,9 +72,8 @@ export default function Header() {
         
             <div className="relative z-30 text-center sm:w-1/2 md:text-left md:w-5/12">
               <Link href="/" scroll={false}>
-                  <a className="inline-block mx-auto">
-                    <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="hidden sm:block w-[375px]" />
-                    <img src="/images/logo-mobile.svg" alt="Trust Precision Products Logo" className="block sm:hidden w-[100px]" />
+                  <a className="block m-0">
+                    <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="block w-[150px] lg:w-[200px]" />
                   </a>
               </Link>
             </div>            
