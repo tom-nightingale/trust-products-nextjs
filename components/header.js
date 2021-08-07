@@ -64,24 +64,22 @@ export default function Header() {
         
       </div>     
 
-      <div className="absolute left-0 z-20 w-full top-[50px]">
+      <div className="absolute left-0 w-full top-[50px]">
 
         <Container>
 
           <div className="flex flex-wrap items-center justify-between py-4 md:py-8">          
         
-            <div className="text-center sm:w-1/2 md:text-left md:w-5/12">
+            <div className="relative z-30 text-center sm:w-1/2 md:text-left md:w-5/12">
               <Link href="/" scroll={false}>
                   <a className="inline-block mx-auto">
                     <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="hidden sm:block w-[375px]" />
                     <img src="/images/logo-mobile.svg" alt="Trust Precision Products Logo" className="block sm:hidden w-[100px]" />
                   </a>
               </Link>
-            </div>
+            </div>            
 
-            <MobileMenu navItems={navItems} />
-
-            <nav className="justify-between hidden w-6/12 text-sm tracking-widest text-white uppercase xl:w-5/12 lg:flex 2xl:w-1/3">
+            <nav className="relative z-30 justify-between hidden w-6/12 text-sm tracking-widest text-white uppercase xl:w-5/12 lg:flex 2xl:w-1/3">
               <Link href="/" scroll={false}>
                 <a className="" aria-label="Home">
                   Home
@@ -108,6 +106,8 @@ export default function Header() {
             </nav>
 
           </div>
+
+          <MobileMenu navItems={navItems} />
 
         </Container>
           

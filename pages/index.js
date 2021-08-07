@@ -30,7 +30,7 @@ export default function Home({ products }) {
 
           <m.div variants={fade}>     
 
-            <div className="relative">
+            <div className="relative z-20">
 
                 <div className="relative flex items-center min-h-screen p-8 py-20 overflow-hidden text-white bg-black md:p-12 lg:p-20 xl:py-40 2xl:py-40 mt-[48px]">
 
