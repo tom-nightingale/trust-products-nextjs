@@ -21,22 +21,18 @@ export default function Home({ products }) {
       
       <LazyMotion features={domAnimation}>
         
-        <m.main
+        <m.div
           initial="initial"
           animate="enter"
           exit="exit"
-          className="mb-12 md:mb-16 xl:mb-24"
+          className=""
         >    
 
           <m.div variants={fade}>     
 
-            <div className="md:mt-12">
-              
-              <Container>
+            <div className="relative">
 
-                <div className="relative p-8 overflow-hidden text-white bg-black md:p-12 lg:p-20 xl:py-40 2xl:py-40">
-
-                  {/* <img src="images/motorbike.jpg" className="absolute z-0 transform -translate-x-1/2 -translate-y-1/2 opacity-50 top-1/2 left-1/2 grayscale md:grayscale-0 md:opacity-90" alt="Motorbike image" /> */}
+                <div className="relative flex items-center min-h-screen p-8 py-20 overflow-hidden text-white bg-black md:p-12 lg:p-20 xl:py-40 2xl:py-40 mt-[48px]">
 
                   <div className="absolute top-0 bottom-0 left-0 right-0">
                     <Image
@@ -52,7 +48,7 @@ export default function Home({ products }) {
 
                     <p className="mb-4 text-2xl font-black tracking-widest uppercase md:text-5xl">Aftermarket motorbike parts</p>
 
-                    <p className="text-lg font-light tracking-wide opacity-90">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel aliquam lorem, non imperdiet dui.</p>
+                    <p className="font-light tracking-wide md:text-lg opacity-90">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel aliquam lorem, non imperdiet dui.</p>
 
                     <Link href="/" scroll={false}>
                       <a className="inline-block p-4 mt-8 font-bold tracking-widest uppercase border border-white">
@@ -64,14 +60,13 @@ export default function Home({ products }) {
                   
                 </div>
                 
-              </Container>
             </div>
 
             <ProductListings products={products} />      
           
           </m.div>
           
-        </m.main>
+        </m.div>
       </LazyMotion>
 
       <Footer />

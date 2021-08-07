@@ -19,7 +19,7 @@ body {
 
 /* Mobile Menu */
 .btn-mobile-menu {
-  @apply absolute right-0 z-50 flex flex-col items-center justify-around w-8 h-8 transition duration-200 -translate-y-1/2 outline-none top-1/2 lg:hidden;
+  @apply absolute z-50 flex flex-col items-center justify-around w-8 h-8 transition duration-200 -translate-y-1/2 outline-none right-8 top-1/2 lg:hidden;
 
   &:focus {
     @apply outline-none;
@@ -27,7 +27,7 @@ body {
 }
 
 .btn-mobile-menu span {
-  @apply relative w-8 h-1 transition-all duration-200 bg-black rounded-lg;
+  @apply relative w-8 h-[2px] transition-all duration-200 bg-white;
   transform-origin: 0;
 }
 
