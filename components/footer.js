@@ -3,17 +3,19 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="text-white bg-primary-dark">
-
-    <div className="py-12 bg-primary">
-        <Container>
-            <span className="block font-light leading-tight tracking-widest text-center uppercase">Looking for a specific part? Call for more information on <a href="tel:01773719239" className="inline-block font-bold text-secondary hover:text-secondary-dark focus:text-secondary-dark">01773 719 239</a> or <a href="/contact" className="inline-block px-4 py-4 ml-3 font-bold text-white bg-secondary hover:bg-secondary-dark focus:bg-secondary-dark">Get in touch</a></span>
-        </Container>
-    </div>
+    <footer className="text-white bg-black">
 
     <div className="py-12 border-b border-opacity-25 opacity-75 border-primary-light">
         <Container>
             <div className="flex flex-wrap justify-start text-xs leading-loose tracking-widest uppercase sm:-mx-5">
+
+                <div className="w-full mb-8 sm:w-1/2 md:w-1/4 sm:px-5 md:mb-0">
+                  <Link href="/" scroll={false}>
+                      <a className="block m-0">
+                        <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="block w-[150px] lg:w-[200px]" />
+                      </a>
+                  </Link>
+                </div>
 
                 <div className="w-full mb-8 sm:w-1/2 md:w-1/4 sm:px-5 md:mb-0">
                 <span className="block mb-5 font-bold tracking-widest uppercase">Address</span>

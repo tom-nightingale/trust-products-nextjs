@@ -10,6 +10,8 @@ import { getAllProductsInCollection } from '@/lib/shopify'
 import ProductListings from '@/components/ProductListings'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home({ products }) {
   return (
@@ -44,44 +46,89 @@ export default function Home({ products }) {
                     />
                   </div>
 
-                  <div className="w-full mx-auto max-w-screen-3xl">
+                  
 
-                    <div className="relative z-10 sm:w-2/3 lg:w-1/3">
+                    <div className="w-full px-0 mx-auto max-w-screen-3xl 3xl:px-8">
 
-                      <p className="mb-4 text-2xl font-black tracking-widest uppercase xs:text-3xl md:text-4xl lg:text-5xl">Aftermarket motorbike parts</p>
+                      <div className="relative z-10 md:w-2/3 lg:w-1/3">
 
-                      <p className="font-light tracking-wide md:text-lg opacity-90">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel aliquam lorem, non imperdiet dui.</p>
+                        <p className="mb-4 text-2xl font-black tracking-widest uppercase xs:text-3xl md:text-4xl lg:text-5xl">Aftermarket motorbike parts</p>
 
-                      <Link href="/" scroll={false}>
-                        <a className="inline-block p-4 mt-8 font-bold tracking-widest uppercase border border-white">
-                          View products
-                        </a>
-                      </Link>
+                        <p className="font-light tracking-wide md:text-lg opacity-90">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel aliquam lorem, non imperdiet dui.</p>
+
+                        <Link href="/" scroll={false}>
+                          <a className="inline-block p-4 mt-8 font-bold tracking-widest uppercase border border-white">
+                            View products
+                          </a>
+                        </Link>
+
+                      </div>
 
                     </div>
 
-                  </div>
+                  
                   
                 </div>
                 
             </div>
 
             <Container>
-              <div className="max-w-screen-md py-8 mx-auto text-center md:py-12 lg:py-20 content">
+              <div className="max-w-screen-md p-8 mx-auto text-center md:p-12 lg:p-20 content">
                   <h2>Lorem ipsum dalor sit amet</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar convallis maximus. Fusce eget cursus nisl. Mauris in dapibus nunc. Morbi fermentum at justo quis tincidunt. Nam in sapien quis magna elementum commodo. In nec interdum nulla. Pellentesque aliquam pellentesque urna id sodales.</p>
+
+                  <hr className="max-w-sm mx-auto mb-4" />
+                  
                   <p>Praesent quam magna, vehicula ut erat ut, fringilla ultrices nibh. In pharetra ipsum lorem, ac porta enim mollis luctus. Sed nec imperdiet felis</p>
               </div>
             </Container>
 
             <ProductListings products={products} /> 
+
+
+              <div className="p-20 mx-auto my-12 mt-20 bg-pattern max-w-screen-2xl">
+
+
+
+              </div>
+
+              
+              
+                <div className="max-w-screen-xl mx-auto my-12">
+
+                  <div className="flex flex-wrap bg-white">
+
+                    <div className="p-4 text-center md:w-1/3 md:p-8 lg:p-16">           
+                      <p className="mb-2 font-black tracking-widest uppercase">International Shipping</p>
+                      <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
+                    </div>    
+
+                    <div className="p-4 text-center md:w-1/3 md:p-8 lg:p-16">           
+                      <p className="mb-2 font-black tracking-widest uppercase">International Shipping</p>
+                      <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
+                    </div>   
+
+                    <div className="p-4 text-center md:w-1/3 md:p-8 lg:p-16">           
+                      <p className="mb-2 font-black tracking-widest uppercase">International Shipping</p>
+                      <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
+                    </div>                   
+
+                  </div>
+              
+                </div>
+             
+
+
+            
           
           </m.div>
           
         </m.div>
+        
       </LazyMotion>
 
       <Footer />
+      
     </Layout>
   )
 }

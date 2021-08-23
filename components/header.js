@@ -112,29 +112,6 @@ export default function Header() {
           
       </div>
       
-      {/* <div className="bg-primary">
-        <Container>
-            <div className="flex flex-wrap text-xs text-center text-white">
-
-              <div className="hidden w-1/3 p-4 lg:p-6 lg:px-8 xl:p-10 xl:px-16 md:block">
-                <p className="mb-1 text-sm font-black tracking-widest uppercase">Made with precision in the U.K.</p>
-                <p>Made in our Precision Engineering factory using the latest cutting edge machinery.</p>
-              </div>
-
-              <div className="hidden w-1/3 p-4 border-l border-r lg:p-6 lg:px-8 xl:p-10 xl:px-16 border-white/25 md:block">
-                <p className="mb-1 text-sm font-black tracking-widest uppercase">Express delivery options</p>
-                <p>Want faster delivery? We've got you covered with our express shipping options.</p>
-              </div>
-
-              <div className="hidden w-1/3 p-4 lg:p-6 lg:px-8 xl:p-10 xl:px-16 md:block">
-                <p className="mb-1 text-sm font-black tracking-widest uppercase">Worldwide shipping available</p>
-                <p>Don't worry if you're not in the U.K. We can ship our aftermarket products to your door!</p>
-              </div>
-              
-            </div>
-        </Container>
-      </div> */}
-      
     </header>
   )
 }
