@@ -5,11 +5,11 @@ import { fade } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 
-export default function ShippingDelivery() {
+export default function Contact() {
   return (
     <Layout>
       
-      <NextSeo title="Shipping &amp; Delivery" />
+      <NextSeo title="Contact" />
 
       <Header />
 
@@ -25,7 +25,7 @@ export default function ShippingDelivery() {
               
               <div className="max-w-screen-md py-20 mx-auto">
 
-                <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">Shipping &amp; Delivery</h1>
+                <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">Contact</h1>
                 
                 <div className="mb-4 content">
                   

@@ -1,5 +1,4 @@
 import { NextSeo } from 'next-seo'
-import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
@@ -33,7 +32,7 @@ export default function Home({ products }) {
 
             <div className="relative z-20">
 
-                <div className="relative flex items-center h-[90vh] p-8 py-20 pt-48 overflow-hidden text-white bg-black xs:py-20 md:py-12 lg:py-20 xl:py-40 2xl:py-40">
+                <div className="relative flex items-center h-[90vh] min-h-[750px] p-8 py-20 pt-48 overflow-hidden text-white bg-black xs:py-20 md:py-12 lg:py-20 xl:py-40 2xl:py-40">
 
                   <div className="absolute top-0 bottom-0 left-0 right-0">
                     <Image
