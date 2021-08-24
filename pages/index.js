@@ -33,7 +33,7 @@ export default function Home({ products }) {
 
             <div className="relative z-20">
 
-                <div className="relative flex items-center min-h-screen p-8 py-20 pt-48 overflow-hidden text-white bg-black xs:py-20 md:py-12 lg:py-20 xl:py-40 2xl:py-40">
+                <div className="relative flex items-center h-[90vh] min-h-[950px] p-8 py-20 pt-48 overflow-hidden text-white bg-black xs:py-20 md:py-12 lg:py-20 xl:py-40 2xl:py-40">
 
                   <div className="absolute top-0 bottom-0 left-0 right-0">
                     <Image
@@ -57,13 +57,12 @@ export default function Home({ products }) {
                         destination="/products"
                         label="View products"
                         a11yText="View our products"    
-                        extraClasses="mt-8"             
+                        extraClasses="mt-8 btn--border-white"   
                       />
 
                     </div>
 
-                  </div>
-                  
+                  </div>                 
                   
                 </div>
                 
@@ -87,7 +86,7 @@ export default function Home({ products }) {
 
             <div className="relative flex flex-wrap items-center mx-auto my-12 mt-20 bg-black max-w-screen-2xl">
 
-              <Dots classes="absolute bottom-0 right-0 w-1/2 h-full bg-dots opacity-[5%]" />
+              <Dots classes="hidden md:block absolute top-0 right-0 3xl:top-[-50px] 3xl:right-[-50px] w-[150px] h-[150px] bg-dots opacity-[50%] text-black bg-black" />
 
               <div className="relative w-full md:w-1/2 min-h-[400px] order-2">
                 <Image
@@ -95,7 +94,7 @@ export default function Home({ products }) {
                   alt=""
                   layout="fill"
                   objectFit="cover"
-                  className="z-10 duration-500 ease-in-out transform opacity-50 grayscale md:grayscale-0 lg:opacity-90"
+                  className="z-10 duration-500 ease-in-out"
                 />
               </div>
 
@@ -111,12 +110,12 @@ export default function Home({ products }) {
 
               <div className="flex flex-wrap bg-white">
 
-                <div className="relative p-4 text-center md:w-1/3 md:p-8 lg:p-16 after:absolute after:right-0 after:top-[50%] after:w-[1px] after:h-1/2 after:transform after:-translate-y-1/2 after:bg-black/10">           
+                <div className="relative p-4 text-center md:w-1/3 md:p-8 lg:p-16 after:absolute after:right-0 after:top-[50%] md:after:w-[1px] after:h-1/2 after:transform after:-translate-y-1/2 after:bg-black/10">           
                   <p className="mb-2 font-black tracking-widest uppercase">AS9100 Aerospace Accredited</p>
                   <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
                 </div>    
 
-                <div className="relative p-4 text-center md:w-1/3 md:p-8 lg:p-16 after:absolute after:right-0 after:top-[50%] after:w-[1px] after:h-1/2 after:transform after:-translate-y-1/2 after:bg-black/10">           
+                <div className="relative p-4 text-center md:w-1/3 md:p-8 lg:p-16 after:absolute after:right-0 after:top-[50%] md:after:w-[1px] after:h-1/2 after:transform after:-translate-y-1/2 after:bg-black/10">           
                   <p className="mb-2 font-black tracking-widest uppercase">International Shipping</p>
                   <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
                 </div>   

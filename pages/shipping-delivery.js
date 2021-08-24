@@ -25,11 +25,11 @@ export default function About() {
         >
             <m.div variants={fade} className="mt-64">
               
-              <Container>
-              
+              <div className="max-w-screen-md py-20 mx-auto">
+
                 <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">Shipping &amp; Delivery</h1>
                 
-                <div className="max-w-3xl mb-4 content">
+                <div className="mb-4 content">
                   
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus laoreet molestie. Proin gravida sem nec lacus tincidunt, venenatis congue sem egestas. Sed ac efficitur mi, id condimentum nunc. Sed suscipit justo lobortis, rutrum eros ac, vulputate sapien. Etiam pharetra auctor enim vitae vestibulum. Cras elit mauris, faucibus sed arcu vel, vulputate consectetur velit. Integer consequat mollis mi, ut aliquam mauris aliquam sed. Nunc tincidunt, lectus at rhoncus mattis, mi purus rutrum neque, ut hendrerit enim ante dignissim elit.</p>
 
@@ -39,7 +39,7 @@ export default function About() {
 
                 </div>
 
-              </Container>
+              </div>
 
             </m.div>
 

@@ -29,7 +29,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="">
+    <header>
 
       <div className="fixed top-0 z-50 w-full uppercase bg-black">
 
@@ -72,7 +72,7 @@ export default function Header() {
         
             <div className="relative z-30 text-center sm:w-1/2 md:text-left md:w-5/12">
               <Link href="/" scroll={false}>
-                  <a className="block m-0">
+                  <a className="inline-block m-0">
                     <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="block w-[150px] lg:w-[200px]" />
                   </a>
               </Link>
@@ -80,25 +80,25 @@ export default function Header() {
 
             <nav className="relative z-30 justify-between hidden w-6/12 text-sm tracking-widest text-white uppercase xl:w-5/12 lg:flex 2xl:w-1/3">
               <Link href="/" scroll={false}>
-                <a className="" aria-label="Home">
+                <a className="hover:underline" aria-label="Home">
                   Home
                 </a>
               </Link>
 
               <Link href="/products" scroll={false}>
-                <a className="" aria-label="Products">
+                <a className="hover:underline" aria-label="Products">
                   Products
                 </a>
               </Link>
 
               <Link href="/shipping-delivery" scroll={false}>
-                <a className="" aria-label="Products">
+                <a className="hover:underline" aria-label="Products">
                   Shipping &amp; Delivery
                 </a>
               </Link>
               
               <Link href="/contact" scroll={false}>
-                <a className="" aria-label="Contact">
+                <a className="hover:underline" aria-label="Contact">
                   Contact
                 </a>
               </Link>

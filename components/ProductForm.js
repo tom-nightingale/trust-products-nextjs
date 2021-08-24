@@ -11,9 +11,9 @@ function ProductForm({ title, handle, variants, setVariantPrice, mainImg }) {
   const addToCart = useAddToCartContext()
 
   const atcBtnStyle = isLoading ?
-    `mt-8 md:mt-0 w-full md:w-1/3 bg-primary-dark text-white py-4 flex items-center justify-center text-sm font-black tracking-widest uppercase opacity-25 cursor-none`
+    `mt-8 md:mt-0 w-full md:w-1/3 bg-black text-white py-4 flex items-center justify-center text-sm font-black tracking-widest uppercase opacity-25 cursor-none`
     :
-    `mt-8 md:mt-0 w-full md:w-1/3 bg-primary-dark text-white py-4 flex items-center justify-center text-sm font-black tracking-widest uppercase`
+    `mt-8 md:mt-0 w-full md:w-1/3 bg-black text-white py-4 flex items-center justify-center text-sm font-black tracking-widest uppercase`
 
   function handleSizeChange(e) {
     setVariantId(e)

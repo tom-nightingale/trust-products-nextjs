@@ -11,14 +11,14 @@ function ProductCard({ product, alt }) {
   const price = product.node.variants.edges[0].node.price
 
   const imageNode = product.node.images.edges[0].node
-
-  console.log(alt);
   
   return (
 
-    <div className="flex-wrap w-full px-4">
+    <>
 
-      <div className="py-4 md:flex md:py-8 lg:py-12">
+    <div className="flex-wrap w-full p-4 md:p-8">
+
+      <div className="md:flex">
 
         <div className={`${alt ? 'md:order-2' : '' } md:w-1/2`}>
 
@@ -52,7 +52,7 @@ function ProductCard({ product, alt }) {
 
         <div className="relative pt-4 md:px-8 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
 
-          <Dots classes={`w-[300px] h-[300px] hidden md:block absolute top-0 ${alt ? 'left-0' : 'right-0' }`} />
+          <Dots classes={`-z-10 w-[300px] h-[300px] hidden md:block absolute top-0 ${alt ? 'left-0' : 'right-0' }`} />
 
           <p className="hidden mb-4 text-xl font-bold tracking-widest uppercase md:block">{title}</p>
 
@@ -77,10 +77,12 @@ function ProductCard({ product, alt }) {
 
       </div>
 
-      <hr className="mx-auto w-full h-[1px] bg-black/10" />
-
+      <hr className="mx-auto w-full h-[1px] bg-black/10 mt-8 md:mt-16" />
+    
     </div>
 
+    
+    </>
   )
 }
 

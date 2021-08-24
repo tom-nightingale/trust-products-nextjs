@@ -6,10 +6,12 @@ function CheckOutButton({ webUrl }) {
     <a
       href={webUrl}
       aria-label="checkout-products"
-      className="w-full p-4 mb-8 text-sm font-black tracking-widest text-center text-white uppercase md:w-auto md:mb-0 md:order-2 bg-secondary"
+      className="w-full mb-8 ml-auto text-center text-white bg-black md:mb-0 btn md:w-auto md:order-3"
     >
-      Check Out
-      <FontAwesomeIcon icon={faArrowRight} className="inline-flex w-4 ml-2" />
+      <span>
+        Check Out
+        <FontAwesomeIcon icon={faArrowRight} className="inline-flex w-4 ml-2" />
+      </span>
     </a>
   )
 }
