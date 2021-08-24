@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function BackToProductButton() {
   return (
-    <Link href="/" passHref scroll={false}>
+    <Link href="/products" passHref scroll={false}>
       <a
         aria-label="back-to-products"
         className="flex items-center text-xs font-black tracking-widest uppercase opacity-50"

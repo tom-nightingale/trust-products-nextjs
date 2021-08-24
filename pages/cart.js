@@ -23,27 +23,28 @@ function CartPage() {
           initial="initial"
           animate="enter"
           exit="exit"
-          className="mb-12 md:mb-16 xl:mb-24"
+          className=""
         >
 
-          <Container>
-            <m.div variants={fade}>
+          <m.div variants={fade} className="mt-64">
+            
+            <Container>
 
-              <div className="container min-h-screen mx-auto mb-20">
-              
-              <CartTable cart={cart} />
-              
-              <div className="flex flex-col items-center justify-between w-full px-2 md:flex-row">
-                <CheckOutButton webUrl={checkoutUrl} />
-                <BackToProductButton />
-              </div>
-
+            <div className="container min-h-screen mx-auto mb-20">
+            
+            <CartTable cart={cart} />
+            
+            <div className="flex flex-col items-center justify-between w-full px-2 md:flex-row">
+              <CheckOutButton webUrl={checkoutUrl} />
+              <BackToProductButton />
             </div>
 
+          </div>
 
-            </m.div>
 
-          </Container>
+            </Container>
+
+          </m.div>
 
         </m.div>
 

@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Price from '@/components/Price'
+import Dots from '@/components/dots'
+import Button from '@/components/button'
 
-function ProductCard({ product }) {
+function ProductCard({ product, alt }) {
   const handle = product.node.handle
   const title = product.node.title
   const description = product.node.description
@@ -10,50 +12,73 @@ function ProductCard({ product }) {
 
   const imageNode = product.node.images.edges[0].node
 
+  console.log(alt);
+  
   return (
-    <div className="w-full p-4 md:w-1/2">
-      
-      <Link
-        href={`/products/${handle}`}
-        passHref
-        scroll={false}
-      >
 
-          <a className="block w-full cursor-pointer group">
-            
-            <div className="relative w-full h-[600px] bg-black">
+    <div className="flex-wrap w-full px-4">
 
-              <Image
-                src={imageNode.originalSrc}
-                alt={imageNode.altText}
-                layout="fill"
-                objectFit="cover"
-                className="z-10 duration-500 ease-in-out transform group-hover:scale-110 grayscale group-hover:grayscale-0"
-              />
+      <div className="py-4 md:flex md:py-8 lg:py-12">
 
-              <div className="absolute bottom-0 left-0 z-20 p-4 text-sm text-white md:w-2/3 md:p-8">
-                
-                <div className="text-xl font-bold tracking-widest uppercase">
-                  {title}
-                </div>
+        <div className={`${alt ? 'md:order-2' : '' } md:w-1/2`}>
 
-                <div className="text-lg tracking-widest uppercase">
-                  <Price
-                    currency="£"
-                    num={price}
-                    numSize=""
+          <Link
+            href={`/products/${handle}`}
+            passHref
+            scroll={false}
+          >
+
+              <a className="block w-full cursor-pointer group">
+
+                <p className="mb-4 text-xl font-bold tracking-widest uppercase md:hidden">{title}</p>
+
+                <div className="relative w-full h-[400px] lg:h-[600px] bg-black">                
+
+                  <Image
+                      src={imageNode.originalSrc}
+                      alt={imageNode.altText}
+                      layout="fill"
+                      objectFit="cover"
+                      className="z-10 duration-500 ease-in-out transform group-hover:scale-110 grayscale group-hover:grayscale-0 md:w-1/2"
                   />
+
                 </div>
-                
-              </div>
 
-            </div>
+              </a>
 
-          </a>
-          
-        {/* </div> */}
-      </Link>
-      
+          </Link>
+
+        </div>
+
+        <div className="relative pt-4 md:px-8 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
+
+          <Dots classes={`w-[300px] h-[300px] hidden md:block absolute top-0 ${alt ? 'left-0' : 'right-0' }`} />
+
+          <p className="hidden mb-4 text-xl font-bold tracking-widest uppercase md:block">{title}</p>
+
+          <p>{description}</p>
+
+          <div className="my-4 text-lg font-bold tracking-widest uppercase">
+            <Price
+              currency="£"
+              num={price}
+              numSize=""
+            />
+          </div>
+
+          <Button
+            destination={`/products/${handle}`}
+            label="View product"
+            a11yText={`View ${title} product information`}    
+            extraClasses="btn--border-black mr-auto p-2"             
+          />
+
+        </div>
+
+      </div>
+
+      <hr className="mx-auto w-full h-[1px] bg-black/10" />
+
     </div>
 
   )

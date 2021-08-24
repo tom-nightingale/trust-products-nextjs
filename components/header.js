@@ -31,7 +31,7 @@ export default function Header() {
   return (
     <header className="">
 
-      <div className="fixed top-0 z-50 w-full uppercase bg-black bg-opacity-50">
+      <div className="fixed top-0 z-50 w-full uppercase bg-black">
 
         <Container>
 
@@ -64,7 +64,7 @@ export default function Header() {
         
       </div>     
 
-      <div className="absolute left-0 w-full top-[50px]">
+      <div className="absolute left-0 w-full top-[48px] bg-black">
 
         <Container>
 

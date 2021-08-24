@@ -12,8 +12,9 @@ function ProductImage({ images }) {
   }
 
   return (
-    <div className="w-full bg-white border border-white md:w-1/2">
-      <div className="relative h-[500px] md:h-[700px] lg:h-[900px] w-full bg-gray-100">
+    <div className="w-full bg-white border border-white">
+
+      <div className="relative h-[500px] md:h-[700px] lg:h-[700px] w-full bg-gray-100">
         <Image
           src={mainImg.originalSrc}
           alt={mainImg.altText}

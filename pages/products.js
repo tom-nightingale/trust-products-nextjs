@@ -1,22 +1,19 @@
 import { NextSeo } from 'next-seo'
-import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Container from '@/components/container'
+import Dots from '@/components/dots'
 import ProductListings from '@/components/ProductListings'
 import { fade } from '@/helpers/transitions'
 import { getAllProductsInCollection } from '@/lib/shopify'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
-import Dots from '@/components/dots'
-import Button from '@/components/button'
 
 export default function Home({ products }) {
   return (
     <Layout>
       
-      <NextSeo title="Something else" />
+      <NextSeo title="Product Archive" />
 
       <Header />
       
@@ -29,59 +26,7 @@ export default function Home({ products }) {
           className=""
         >
 
-          <m.div variants={fade}>     
-
-            <div className="relative z-20">
-
-                <div className="relative flex items-center min-h-screen p-8 py-20 pt-48 overflow-hidden text-white bg-black xs:py-20 md:py-12 lg:py-20 xl:py-40 2xl:py-40">
-
-                  <div className="absolute top-0 bottom-0 left-0 right-0">
-                    <Image
-                      src="/images/motorbike.jpg"
-                      alt=""
-                      layout="fill"
-                      objectFit="cover"
-                      className="z-10 duration-500 ease-in-out transform opacity-50 grayscale md:grayscale-0 lg:opacity-90"
-                    />
-                  </div>
-
-                  <div className="w-full px-0 mx-auto max-w-screen-3xl 3xl:px-8">
-
-                    <div className="relative z-10 md:w-2/3 lg:w-1/3">
-
-                      <p className="mb-4 text-2xl font-black tracking-widest uppercase xs:text-3xl md:text-4xl lg:text-5xl">Aftermarket motorbike parts</p>
-
-                      <p className="font-light tracking-wide md:text-lg opacity-90">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel aliquam lorem, non imperdiet dui.</p>
-
-                      <Button
-                        destination="/products"
-                        label="View products"
-                        a11yText="View our products"    
-                        extraClasses="mt-8"             
-                      />
-
-                    </div>
-
-                  </div>
-                  
-                  
-                </div>
-                
-            </div>
-
-            <Container>
-              <div className="max-w-screen-md p-8 mx-auto text-center md:p-12 lg:p-20 content">
-                  
-                  <h2>Lorem ipsum dalor sit amet</h2>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar convallis maximus. Fusce eget cursus nisl. Mauris in dapibus nunc. Morbi fermentum at justo quis tincidunt. Nam in sapien quis magna elementum commodo. In nec interdum nulla. Pellentesque aliquam pellentesque urna id sodales.</p>
-
-                  <hr className="max-w-sm mx-auto mb-4" />
-                  
-                  <p>Praesent quam magna, vehicula ut erat ut, fringilla ultrices nibh. In pharetra ipsum lorem, ac porta enim mollis luctus. Sed nec imperdiet felis</p>
-                  
-              </div>
-            </Container>
+          <m.div variants={fade} className="mt-56 md:mt-64">           
 
             <ProductListings products={products} /> 
 
@@ -89,7 +34,7 @@ export default function Home({ products }) {
 
               <Dots classes="absolute bottom-0 right-0 w-1/2 h-full bg-dots opacity-[5%]" />
 
-              <div className="relative w-full md:w-1/2 min-h-[400px] order-2">
+              <div className="relative w-1/2 min-h-[400px]">
                 <Image
                   src="/images/harley.jpg"
                   alt=""
@@ -99,7 +44,7 @@ export default function Home({ products }) {
                 />
               </div>
 
-              <div className="relative z-10 w-full p-10 text-white md:p-20 md:w-1/2 md:order-3"> 
+              <div className="w-1/2 p-20 text-white"> 
                 <p className="text-xl font-black tracking-widest uppercase">Precision parts, made to order.</p>
                 <p>We provide precision motorbike parts to our customers worldwide, ranging from here in the U.K to Australia, Europe and the United States.</p>
                 <p>We offer express international shipping worldwide, allowing to enjoy your parts as soon as possible.</p>

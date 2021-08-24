@@ -7,7 +7,7 @@ function ProductDetails({ productData }) {
   const [variantPrice, setVariantPrice] = useState(productData.variants.edges[0].node.price)
 
   return (
-    <div className="flex flex-col justify-between w-full h-full mx-auto md:px-20 md:py-0 md:w-1/2 min-h-128">
+    <div className="flex flex-col justify-between w-full h-full mx-auto md:px-20 md:py-0 min-h-128">
       
       <ProductInfo 
         title={productData.title}
@@ -24,6 +24,7 @@ function ProductDetails({ productData }) {
       />
 
       <BackToProductButton />
+      
     </div>
   )
 }

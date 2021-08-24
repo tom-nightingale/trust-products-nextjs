@@ -18,7 +18,6 @@ export default function Footer() {
                 </div>
 
                 <div className="w-full mb-8 sm:w-1/2 md:w-1/4 sm:px-5 md:mb-0">
-                <span className="block mb-5 font-bold tracking-widest uppercase">Address</span>
                     <address className="not-italic">
                         <span className="block" property="name">Trust Precision Products</span>
                         <span className="block" property="addressLocality">Unit 2 Meadowbank Court</span>
@@ -29,13 +28,11 @@ export default function Footer() {
                 </div>
 
                 <div className="w-full mb-8 sm:w-1/2 md:w-1/4 sm:px-5 md:mb-0">
-                    <span className="block mb-5 font-bold tracking-widest text-white uppercase">Contact Details</span>
                     <a href="mailto:test@test.com" className="block no-underline break-words hover:text-secondary focus:text-secondary">test@test.com</a>
                     <a href="tel:01773719239" className="block mb-5 no-underline hover:text-secondary focus:text-secondary">01773 719 239</a>
                 </div>
 
                 <div className="w-full mb-8 sm:w-1/2 md:w-1/4 sm:px-5 md:mb-0">
-                    <span className="block mb-5 font-bold tracking-widest text-white uppercase">Navigation</span>
                     <nav role="navigation" aria-label="Footer Navigation">
                         <ul>
                             <li className="mb-2">
