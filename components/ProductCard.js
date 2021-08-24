@@ -16,7 +16,7 @@ function ProductCard({ product, alt }) {
 
     <>
 
-    <div className="flex-wrap w-full p-4 md:p-8">
+    <div className="flex-wrap w-full p-8">
 
       <div className="md:flex">
 
@@ -50,7 +50,7 @@ function ProductCard({ product, alt }) {
 
         </div>
 
-        <div className="relative pt-4 md:px-8 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
+        <div className="relative pt-8 md:px-8 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
 
           <Dots classes={`-z-10 w-[300px] h-[300px] hidden md:block absolute top-0 ${alt ? 'left-0' : 'right-0' }`} />
 

@@ -73,7 +73,7 @@ export default function Header() {
             <div className="relative z-30 text-center sm:w-1/2 md:text-left md:w-5/12">
               <Link href="/" scroll={false}>
                   <a className="inline-block m-0">
-                    <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="block w-[150px] lg:w-[200px]" />
+                    <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="block w-[150px] lg:w-[200px]" width="150px" height="77px" />
                   </a>
               </Link>
             </div>            
