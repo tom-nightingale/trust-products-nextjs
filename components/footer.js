@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className="w-full mb-8 sm:w-1/2 md:w-1/4 sm:px-5 md:mb-0">
                   <Link href="/" scroll={false}>
                       <a className="block m-0">
-                        <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="mx-auto sm:m-0 block w-[150px] lg:w-[200px]" />
+                        <img src="/images/logo.svg" alt="Trust Precision Products Logo" className="mx-auto sm:m-0 block w-[150px] lg:w-[200px]" width="150px" height="77px" />
                       </a>
                   </Link>
                 </div>
