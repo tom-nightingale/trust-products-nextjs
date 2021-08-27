@@ -13,7 +13,7 @@ export default function Home({ products }) {
   return (
     <Layout>
       
-      <NextSeo title="Product Archive" />
+      <NextSeo title="Precision Motorbike Parts | Trust Precision Engineering" />
 
       <Header />
       

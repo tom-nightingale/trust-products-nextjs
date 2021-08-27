@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <Layout>
       
-      <NextSeo title="Contact" />
+      <NextSeo title="Contact | Trust Precision Engineering" />
 
       <Header />
 

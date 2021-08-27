@@ -15,7 +15,7 @@ export default function Home({ products }) {
   return (
     <Layout>
       
-      <NextSeo title="Something else" />
+      <NextSeo title="Aftermarket Motorbike Parts | Trust Precision Engineering" />
 
       <Header />
       

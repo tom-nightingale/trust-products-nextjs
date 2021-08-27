@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
@@ -9,9 +10,12 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { fade } from '@/helpers/transitions'
 
 function ProductPage({ productData }) {  
+  console.log(productData);
 
   return (
     <Layout>
+
+      <NextSeo title={`${productData.title} | Trust Precision Engineering`} />
       
       <Header />
 

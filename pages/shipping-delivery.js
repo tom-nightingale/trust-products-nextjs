@@ -9,7 +9,7 @@ export default function ShippingDelivery() {
   return (
     <Layout>
       
-      <NextSeo title="Shipping &amp; Delivery" />
+      <NextSeo title="Shipping &amp; Delivery | Trust Precision Engineering" />
 
       <Header />
 
