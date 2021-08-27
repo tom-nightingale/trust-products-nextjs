@@ -21,9 +21,9 @@ export default function ShippingDelivery() {
           exit="exit"
           className=""
         >
-            <m.div variants={fade} className="mt-64">
+            <m.div variants={fade} className="mt-40 lg:mt-64">
               
-              <div className="max-w-screen-md py-20 mx-auto">
+              <div className="max-w-screen-md p-8 mx-auto lg:py-20">
 
                 <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">Shipping &amp; Delivery</h1>
                 
