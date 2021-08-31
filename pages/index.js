@@ -1,24 +1,35 @@
+import sanity from "@/lib/sanity"
+import BlockContent from '@sanity/block-content-to-react'
+import { useNextSanityImage } from 'next-sanity-image';
+import { getAllProductsInCollection } from '@/lib/shopify'
+
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
 import ProductListings from '@/components/ProductListings'
 import { fade } from '@/helpers/transitions'
-import { getAllProductsInCollection } from '@/lib/shopify'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
-import Dots from '@/components/dots'
-import Button from '@/components/button'
-import CtaShipping from '@/components/CtaShipping'
 
-export default function Home({ products }) {
+import { LazyMotion, domAnimation, m } from 'framer-motion'
+import Button from '@/components/button'
+import CtaShipping from '@/components/Cta'
+
+export default function Home({ global, home, products }) {
+
+  const heroBackgroundProps = useNextSanityImage(
+		sanity,
+		home.heroBackgroundImage
+	);
+
   return (
     <Layout>
       
-      <NextSeo title="Aftermarket Motorbike Parts | Trust Precision Engineering" />
+      <NextSeo title={home.seo.metaTitle} />
 
-      <Header />
+      <Header bannerContent={global.fixedBannerContent} />
       
       <LazyMotion features={domAnimation}>
         
@@ -37,7 +48,7 @@ export default function Home({ products }) {
 
                   <div className="absolute top-0 bottom-0 left-0 right-0">
                     <Image
-                      src="/images/motorbike.jpg"
+                      {...heroBackgroundProps}
                       alt=""
                       layout="fill"
                       objectFit="cover"
@@ -49,9 +60,9 @@ export default function Home({ products }) {
 
                     <div className="relative z-10 md:w-2/3 lg:w-1/3">
 
-                      <p className="mb-4 text-2xl font-black tracking-widest uppercase xs:text-3xl md:text-4xl lg:text-5xl">Aftermarket motorbike parts</p>
+                      <p className="mb-4 text-2xl font-black tracking-widest uppercase xs:text-3xl md:text-4xl lg:text-5xl">{home.heroHeading}</p>
 
-                      <p className="font-light tracking-wide md:text-lg opacity-90">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel aliquam lorem, non imperdiet dui.</p>
+                      <p className="font-light tracking-wide md:text-lg opacity-90">{home.heroBlurb}</p>
 
                       <Button
                         destination="/products"
@@ -71,20 +82,16 @@ export default function Home({ products }) {
             <Container>
               <div className="max-w-screen-md p-8 mx-auto text-center md:p-12 lg:p-20 content">
                   
-                  <h2>Lorem ipsum dalor sit amet</h2>
+                  <h1>{home.contentHeading}</h1>
 
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar convallis maximus. Fusce eget cursus nisl. Mauris in dapibus nunc. Morbi fermentum at justo quis tincidunt. Nam in sapien quis magna elementum commodo. In nec interdum nulla. Pellentesque aliquam pellentesque urna id sodales.</p>
-
-                  <hr className="max-w-sm mx-auto mb-4" />
-                  
-                  <p>Praesent quam magna, vehicula ut erat ut, fringilla ultrices nibh. In pharetra ipsum lorem, ac porta enim mollis luctus. Sed nec imperdiet felis</p>
+                  <BlockContent serializers={{ container: ({ children }) => children }} blocks={home.content} />
                   
               </div>
             </Container>
 
             <ProductListings products={products} /> 
 
-            <CtaShipping />
+            <CtaShipping ctaHeading={global.ctaHeading} ctaBlurb={global.ctaBlurb} ctaBackground={global.ctaBackground} />
 
             <div className="mx-auto my-12 max-w-screen-2xl">
 
@@ -121,12 +128,46 @@ export default function Home({ products }) {
   )
 }
 
+const homeQuery = `*[_type == "home"][0] 
+  {
+    _id,
+    title,
+    heroHeading,
+    heroBlurb,
+    heroBackgroundImage {
+      asset ->
+    },
+    contentHeading,
+    content,
+    seo {
+      ...,
+      shareGraphic {
+        asset->
+      }
+    }
+  }
+`;
+
+const globalQuery = `*[_type == "global"][0] 
+  {
+    fixedBannerContent,
+    ctaBackground {
+      asset ->
+    },
+    ctaHeading,
+    ctaBlurb
+  }
+`;
+
 export async function getStaticProps() {
-  
+  const global = await sanity.fetch(globalQuery);
+  const home = await sanity.fetch(homeQuery);  
   const products = await getAllProductsInCollection();
 
   return {
     props: {
+      global,
+      home,
       products
     },
   }

@@ -1,7 +1,16 @@
-import Dots from '@/components/dots'
+import sanity from "@/lib/sanity"
 import Image from 'next/image'
+import { useNextSanityImage } from 'next-sanity-image';
+import BlockContent from '@sanity/block-content-to-react'
+import Dots from '@/components/dots'
 
-export default function CtaShipping({  }) {
+export default function CtaShipping({ ctaHeading, ctaBlurb, ctaBackground }) {
+
+    const ctaBackgroundProps = useNextSanityImage(
+        sanity,
+        ctaBackground
+    );
+
     return (
         <div className="relative flex flex-wrap items-center mx-auto my-12 mt-20 bg-black max-w-screen-2xl">
 
@@ -9,7 +18,7 @@ export default function CtaShipping({  }) {
 
             <div className="relative w-full md:w-1/2 min-h-[400px] order-2">
                 <Image
-                    src="/images/harley.jpg"
+                    {...ctaBackgroundProps}
                     alt=""
                     layout="fill"
                     objectFit="cover"
@@ -18,9 +27,10 @@ export default function CtaShipping({  }) {
             </div>
 
             <div className="relative z-10 w-full p-10 text-white md:p-20 md:w-1/2 md:order-3"> 
-                <p className="text-xl font-black tracking-widest uppercase">Precision parts, made to order.</p>
-                <p>We provide precision motorbike parts to our customers worldwide, ranging from here in the U.K to Australia, Europe and the United States.</p>
-                <p>We offer express international shipping worldwide, allowing to enjoy your parts as soon as possible.</p>
+                <p className="mb-8 text-xl font-black tracking-widest uppercase">{ctaHeading}</p>
+                <div className="content">
+                    <BlockContent serializers={{ container: ({ children }) => children }} blocks={ctaBlurb} />
+                </div>
             </div>
 
         </div>

@@ -15,6 +15,6 @@ module.exports = withPWA({
     twitterHandle: '@deepwhitman'
   },
   images: {
-    domains: ['cdn.shopify.com'],
+    domains: ['cdn.shopify.com', 'cdn.sanity.io'],
   },
 })

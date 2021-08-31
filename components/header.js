@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 
-export default function Header() {
+export default function Header({ bannerContent }) {
 
   const cart = useCartContext()[0]
   const [cartItems, setCartItems] = useState(0)
@@ -37,7 +37,7 @@ export default function Header() {
 
           <div className="flex items-center justify-center w-full px-6 text-xs tracking-widest text-white md:justify-between">
         
-            <p className="hidden py-4 md:inline-block">International shipping now available on all products!</p>
+            <p className="hidden py-4 md:inline-block">{bannerContent}</p>
             
             <Link
               href="/cart"
