@@ -35,14 +35,14 @@ function CartPage() {
 
             <div className="container min-h-screen mx-auto mb-20">
             
-            <CartTable cart={cart} />
-            
-            <div className="flex flex-col items-center justify-between w-full px-2 md:flex-row">
-              <CheckOutButton webUrl={checkoutUrl} />
-              <BackToProductButton />
-            </div>
+              <CartTable cart={cart} />
+              
+              <div className="flex flex-col items-center justify-between w-full px-2 md:flex-row">
+                <CheckOutButton webUrl={checkoutUrl} />
+                <BackToProductButton />
+              </div>
 
-          </div>
+            </div>
 
 
             </Container>

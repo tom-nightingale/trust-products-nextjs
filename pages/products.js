@@ -8,6 +8,7 @@ import ProductListings from '@/components/ProductListings'
 import { fade } from '@/helpers/transitions'
 import { getAllProductsInCollection } from '@/lib/shopify'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
+import CtaShipping from '@/components/CtaShipping'
 
 export default function Home({ products }) {
   return (
@@ -30,27 +31,7 @@ export default function Home({ products }) {
 
             <ProductListings products={products} /> 
 
-            <div className="relative flex flex-wrap items-center mx-auto my-12 mt-20 bg-black max-w-screen-2xl">
-
-              <Dots classes="absolute bottom-0 right-0 w-1/2 h-full bg-dots opacity-[5%]" />
-
-              <div className="relative w-1/2 min-h-[400px]">
-                <Image
-                  src="/images/harley.jpg"
-                  alt=""
-                  layout="fill"
-                  objectFit="cover"
-                  className="z-10 duration-500 ease-in-out transform opacity-50 grayscale md:grayscale-0 lg:opacity-90"
-                />
-              </div>
-
-              <div className="w-1/2 p-20 text-white"> 
-                <p className="text-xl font-black tracking-widest uppercase">Precision parts, made to order.</p>
-                <p>We provide precision motorbike parts to our customers worldwide, ranging from here in the U.K to Australia, Europe and the United States.</p>
-                <p>We offer express international shipping worldwide, allowing to enjoy your parts as soon as possible.</p>
-              </div>
-
-            </div>
+            <CtaShipping />
 
             <div className="mx-auto my-12 max-w-screen-2xl">
 

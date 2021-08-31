@@ -10,7 +10,6 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { fade } from '@/helpers/transitions'
 
 function ProductPage({ productData }) {  
-  console.log(productData);
 
   return (
     <Layout>
