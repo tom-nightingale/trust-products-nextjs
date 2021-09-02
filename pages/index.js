@@ -98,18 +98,18 @@ export default function Home({ global, home, products }) {
               <div className="flex flex-wrap bg-white">
 
                 <div className="relative p-4 text-center md:w-1/3 md:p-8 lg:p-16 after:absolute after:right-0 after:top-[50%] md:after:w-[1px] after:h-1/2 after:transform after:-translate-y-1/2 after:bg-black/10">           
-                  <p className="mb-2 font-black tracking-widest uppercase">AS9100 Aerospace Accredited</p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
+                  <p className="mb-2 font-black tracking-widest uppercase">Quality Assured</p>
+                  <p className="text-sm">Trust Precision operates to the highest Aerospace standards. You can be assured of quality and traceability from a company who has the slogan "where reputation is everything".</p>
                 </div>    
 
                 <div className="relative p-4 text-center md:w-1/3 md:p-8 lg:p-16 after:absolute after:right-0 after:top-[50%] md:after:w-[1px] after:h-1/2 after:transform after:-translate-y-1/2 after:bg-black/10">           
-                  <p className="mb-2 font-black tracking-widest uppercase">International Shipping</p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
+                  <p className="mb-2 font-black tracking-widest uppercase">UK and INTERNATIONAL SHIPPING</p>
+                  <p className="text-sm">We aim to package and ship within 1 working day or your received order and only use reputable carriers.</p>
                 </div>   
 
                 <div className="relative p-4 text-center md:w-1/3 md:p-8 lg:p-16">           
-                  <p className="mb-2 font-black tracking-widest uppercase">Customer Focused Service</p>
-                  <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis faucibus lorem, a aliquam turpis ullamcorper vel. Pellentesque leo felis, tempor tempus viverra non, faucibus non ligula.</p>
+                  <p className="mb-2 font-black tracking-widest uppercase">CUSTOMER FOCUSSED SERVICE</p>
+                  <p className="text-sm">Our reputation has been hard won and is much cherished. Our commitment to you is that we intend to provide the very best products at competitive price levels in shortest delivery times. Feel free to contact us with any queries and in the unlikely event you have any issues you can be assured of a swift response and resolution.</p>
                 </div>                   
 
               </div>
