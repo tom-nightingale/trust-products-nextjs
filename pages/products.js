@@ -1,22 +1,24 @@
+import sanity from "@/lib/sanity"
+import BlockContent from '@sanity/block-content-to-react'
+import { getAllProductsInCollection } from '@/lib/shopify'
+
 import { NextSeo } from 'next-seo'
-import Image from 'next/image'
+
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Dots from '@/components/dots'
 import ProductListings from '@/components/ProductListings'
 import { fade } from '@/helpers/transitions'
-import { getAllProductsInCollection } from '@/lib/shopify'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import CtaShipping from '@/components/Cta'
 
-export default function Home({ products }) {
+export default function Products({ global, products }) {
   return (
     <Layout>
       
       <NextSeo title="Precision Motorbike Parts | Trust Precision Engineering" />
 
-      <Header />
+      <Header bannerContent={global.fixedBannerContent} />
       
       <LazyMotion features={domAnimation}>
         
@@ -31,7 +33,7 @@ export default function Home({ products }) {
 
             <ProductListings products={products} /> 
 
-            <CtaShipping />
+            <CtaShipping ctaHeading={global.ctaHeading} ctaBlurb={global.ctaBlurb} ctaBackground={global.ctaBackground} />
 
             <div className="mx-auto my-12 max-w-screen-2xl">
 
@@ -68,12 +70,27 @@ export default function Home({ products }) {
   )
 }
 
+
+const globalQuery = `*[_type == "global"][0] 
+  {
+    fixedBannerContent,
+    ctaBackground {
+      asset ->
+    },
+    ctaHeading,
+    ctaBlurb
+  }
+`;
+
+
 export async function getStaticProps() {
   
   const products = await getAllProductsInCollection();
+  const global = await sanity.fetch(globalQuery);
 
   return {
     props: {
+      global,
       products
     },
   }
