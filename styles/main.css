@@ -106,3 +106,21 @@ body {
     @apply text-white;
   }
 }
+
+
+form {
+  @apply md:-mx-3;
+  
+  label {
+    @apply w-full mb-2 md:w-1/2 md:p-3;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply w-full p-2 border border-black;
+  }
+}
+form input {
+  @apply p-2 border border-black;
+}

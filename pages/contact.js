@@ -1,17 +1,23 @@
+import sanity from "@/lib/sanity"
+
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Container from '@/components/container'
+
 import { fade } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 
-export default function Contact() {
+export default function Contact({ global }) {
+  
   return (
+
     <Layout>
       
       <NextSeo title="Contact | Trust Precision Engineering" />
 
-      <Header />
+      <Header bannerContent={global.fixedBannerContent} />
 
       <LazyMotion features={domAnimation}>
         
@@ -21,23 +27,74 @@ export default function Contact() {
           exit="exit"
           className=""
         >
-            <m.div variants={fade} className="mt-40 lg:mt-64">
+            <m.div variants={fade} className="mt-40 md:mt-56 lg:mt-64">
               
-              <div className="max-w-screen-md p-8 mx-auto lg:py-20">
+                <Container>
 
-                <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">Contact</h1>
-                
-                <div className="mb-4 content">
-                  
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus laoreet molestie. Proin gravida sem nec lacus tincidunt, venenatis congue sem egestas. Sed ac efficitur mi, id condimentum nunc. Sed suscipit justo lobortis, rutrum eros ac, vulputate sapien. Etiam pharetra auctor enim vitae vestibulum. Cras elit mauris, faucibus sed arcu vel, vulputate consectetur velit. Integer consequat mollis mi, ut aliquam mauris aliquam sed. Nunc tincidunt, lectus at rhoncus mattis, mi purus rutrum neque, ut hendrerit enim ante dignissim elit.</p>
+                  <div className="flex flex-col flex-wrap py-10 mx-auto lg:py-20 lg:flex-row">
+                    
+                    <div className="relative order-2 mt-8 bg-black/10 lg:w-1/2">
 
-                  <p>Aliquam et erat dui. Quisque sit amet sollicitudin enim. Vivamus sed enim quis urna dictum vehicula. Nulla mattis laoreet massa hendrerit faucibus. Nunc vel dui orci. In hac habitasse platea dictumst. Pellentesque vitae turpis erat. Nunc aliquam, velit sit amet varius scelerisque, ligula quam laoreet quam, ac laoreet justo elit ac sapien. Mauris finibus ex mi, ac dapibus tellus tristique non. Vivamus velit dolor, pellentesque et placerat vel, porta in erat. Ut tincidunt mi et vehicula blandit. Nam in velit ac dui suscipit mollis. Nunc interdum tincidunt lacus eget dignissim. Cras dignissim ultrices lectus, a pellentesque risus. Aliquam dolor diam, dictum eu commodo eu, pellentesque nec magna. Quisque mollis urna quis nisl dignissim, in semper augue porttitor.</p>
+                      <iframe className="min-h-[40vw]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.069916628486!2d-1.3221973483209855!3d53.019106106773734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879ecbd0616de47%3A0xfa91205448a62a08!2sTrust%20Precision%20Engineering!5e0!3m2!1sen!2suk!4v1631119673554!5m2!1sen!2suk" width="100%" height="100%" AllowFullScreen="" loading="lazy"></iframe>
+                      
+                    </div>
+                    
+                    <div className="lg:w-1/2 content lg:p-12 xl:p-20 lg:order-2">
 
-                  <p>Cras id feugiat nisi. Nunc eu volutpat est. Integer semper dui eget turpis ultricies rhoncus. Duis vestibulum mi vel odio tincidunt, non suscipit massa semper. Nulla vel mi eu ligula egestas euismod. Praesent et dui nec tortor sollicitudin convallis. In auctor sapien id fringilla sagittis. Duis faucibus eu eros et tristique. Sed elit nisl, lacinia et nisl eu, gravida auctor nisl. Integer enim elit, rhoncus pretium tellus id, tempus dignissim libero. Mauris bibendum porttitor justo, a imperdiet arcu suscipit ut. Nullam fermentum lectus tincidunt egestas semper.</p>
+                        <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">Contact</h1>
+                        
+                        <p>If you have any questions about our services, products or shipping please contact us using the details below and one of our team members will get back to you as soon as possible.</p>
 
-                </div>
+                        <p>Trust Precision Products</p>
 
-              </div>
+                        <p>Address</p>
+
+                        <p>Telephone: </p>
+
+                        <p>Email: </p>
+
+                        <p className="text-xs opacity-75">Fields marked with a * are required.</p>
+                      
+                        <form id="form" action="REPLACE ME" method="POST" className="flex flex-col overflow-x-hidden md:flex-wrap md:flex-row">
+
+                          <label>
+                            <span className="sr-only"></span>
+                            <input required type="text" name="name" placeholder="Name *" />
+                          </label>
+
+                          <label>
+                            <span className="sr-only"></span>
+                            <input required type="text" name="postcode" placeholder="Postcode *" />
+                          </label>
+
+                          <label>
+                            <span className="sr-only"></span>
+                            <input required type="email" name="email" placeholder="Email *" />
+                          </label>
+
+                          <label>
+                            <span className="sr-only"></span>
+                            <input required type="tel" name="telephone" placeholder="Telephone *" />
+                          </label>
+                          
+                          <label className="w-full">
+                            <span className="sr-only"></span>
+                            <textarea required placeholder="Your message *" name="message" className="w-full"></textarea>
+                          </label>
+
+                          <input type="text" name="_gotcha" className="hidden" />
+                          
+                          <div className="w-full mx-auto md:p-3">
+                            <input type="submit" className="font-black tracking-widest text-center text-white uppercase bg-black" value="Send Enquiry" />
+                          </div>
+
+                        </form>
+                        
+                    </div>
+                    
+                  </div>
+
+              </Container>
 
             </m.div>
 
@@ -48,4 +105,24 @@ export default function Contact() {
       <Footer />
     </Layout>
   )
+}
+
+const globalQuery = `*[_type == "global"][0] 
+  {
+    fixedBannerContent,
+    ctaBackground {
+      asset ->
+    },
+    ctaHeading,
+    ctaBlurb
+  }
+`;
+
+export async function getStaticProps() {
+  const global = await sanity.fetch(globalQuery);
+  return {
+    props: {
+      global
+    },
+  }
 }

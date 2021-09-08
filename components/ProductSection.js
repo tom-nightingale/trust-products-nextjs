@@ -5,7 +5,7 @@ import Dots from '@/components/dots'
 function ProductSection({ productData }) {
   return (
       
-    <div className="relative flex-wrap items-center max-w-screen-xl px-4 mx-auto md:flex">
+    <div className="relative flex-wrap items-center mx-auto md:flex">
 
         <Dots classes={`w-[300px] h-[300px] absolute top-[-50px] md:top-[0px] right-0`} />
 

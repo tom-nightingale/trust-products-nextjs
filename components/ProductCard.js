@@ -16,72 +16,75 @@ function ProductCard({ product, alt }) {
 
     <>
 
-    <div className="flex-wrap w-full p-8">
+      <div className="py-10 lg:py-20">
 
-      <div className="md:flex">
+        <div className="flex-wrap w-full">
 
-        <div className={`${alt ? 'md:order-2' : '' } md:w-1/2`}>
+          <div className="md:flex">
 
-          <Link
-            href={`/products/${handle}`}
-            passHref
-            scroll={false}
-          >
+            <div className={`${alt ? 'md:order-2' : '' } md:w-1/2`}>
 
-              <a className="block w-full cursor-pointer group">
+              <Link
+                href={`/products/${handle}`}
+                passHref
+                scroll={false}
+              >
 
-                <p className="mb-4 text-xl font-bold tracking-widest uppercase md:hidden">{title}</p>
+                  <a className="block w-full cursor-pointer group">
 
-                <div className="relative w-full h-[400px] lg:h-[600px] bg-black">                
+                    <p className="mb-4 text-xl font-bold tracking-widest uppercase md:hidden">{title}</p>
 
-                  <Image
-                      src={imageNode.originalSrc}
-                      alt={imageNode.altText}
-                      layout="fill"
-                      objectFit="cover"
-                      className="z-10 duration-500 ease-in-out transform group-hover:scale-110 grayscale group-hover:grayscale-0 md:w-1/2"
-                  />
+                    <div className="relative w-full h-[400px] lg:h-[600px] bg-black">                
 
-                </div>
+                      <Image
+                          src={imageNode.originalSrc}
+                          alt={imageNode.altText}
+                          layout="fill"
+                          objectFit="cover"
+                          className="z-10 duration-500 ease-in-out transform group-hover:scale-110 grayscale group-hover:grayscale-0 md:w-1/2"
+                      />
 
-              </a>
+                    </div>
 
-          </Link>
+                  </a>
 
-        </div>
+              </Link>
 
-        <div className="relative pt-8 md:px-8 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
+            </div>
 
-          <Dots classes={`-z-10 w-[300px] h-[300px] hidden md:block absolute top-0 ${alt ? 'left-0' : 'right-0' }`} />
+            <div className="relative mt-10 lg:mt-0 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
 
-          <p className="hidden mb-4 text-xl font-bold tracking-widest uppercase md:block">{title}</p>
+              <Dots classes={`-z-10 w-[300px] h-[300px] hidden md:block absolute top-0 ${alt ? 'left-0' : 'right-0' }`} />
 
-          <p>{description}</p>
+              <p className="hidden mb-4 text-xl font-bold tracking-widest uppercase md:block">{title}</p>
 
-          <div className="my-4 text-lg font-bold tracking-widest uppercase">
-            <Price
-              currency="£"
-              num={price}
-              numSize=""
-            />
+              <p>{description}</p>
+
+              <div className="my-4 text-lg font-bold tracking-widest uppercase">
+                <Price
+                  currency="£"
+                  num={price}
+                  numSize=""
+                />
+              </div>
+
+              <Button
+                destination={`/products/${handle}`}
+                label="View product"
+                a11yText={`View ${title} product information`}    
+                extraClasses="btn--border-black mr-auto p-2"             
+              />
+
+            </div>
+
           </div>
-
-          <Button
-            destination={`/products/${handle}`}
-            label="View product"
-            a11yText={`View ${title} product information`}    
-            extraClasses="btn--border-black mr-auto p-2"             
-          />
 
         </div>
 
       </div>
 
-      <hr className="mx-auto w-full h-[1px] bg-black/10 mt-8 md:mt-16" />
-    
-    </div>
+      <hr className="mx-auto w-full h-[1px] bg-black/10" />
 
-    
     </>
   )
 }

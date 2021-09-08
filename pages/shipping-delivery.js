@@ -5,14 +5,20 @@ import { getAllProductsInCollection } from '@/lib/shopify'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 
+import Container from "@/components/container";
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import CtaShipping from '@/components/Cta'
+import WhyChooseUs from "@/components/WhyChooseUs";
+
 import { fade } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 
 export default function ShippingDelivery({ global, page }) {
+  
   return (
+
     <Layout>
       
       <NextSeo title="Shipping &amp; Delivery | Trust Precision Engineering" />
@@ -27,19 +33,35 @@ export default function ShippingDelivery({ global, page }) {
           exit="exit"
           className=""
         >
-            <m.div variants={fade} className="mt-40 lg:mt-64">
-              
-              <div className="max-w-screen-md p-8 mx-auto lg:py-20">
+            <m.div variants={fade} className="mt-40 md:mt-56 lg:mt-64">
 
-                <h1 className="mb-4 text-2xl font-bold md:text-3xl xl:text-4xl">{page.title}</h1>
+              <Container>
                 
-                <div className="mb-4 content">
+                <div className="flex-wrap py-10 mx-auto lg:py-20 lg:flex">
                   
-                  <BlockContent serializers={{ container: ({ children }) => children }} blocks={page.content} />
+                  <div className="relative h-auto bg-black lg:w-1/2 min-h-[40vw] mb-8 lg:mb-0">
+                    {/* <Image
+                        {...heroBackgroundProps}
+                        alt=""
+                        layout="fill"
+                        objectFit="cover"
+                        className="z-10 duration-500 ease-in-out transform"
+                      /> */}
+                  </div>
+                  
+                  <div className="lg:w-1/2 content lg:p-12 xl:p-20">
+                      
+                      <h1>{page.title}</h1>
 
+                      <BlockContent serializers={{ container: ({ children }) => children }} blocks={page.content} />
+                      
+                  </div>
                 </div>
+              </Container>
 
-              </div>
+              <WhyChooseUs />   
+
+              <CtaShipping ctaHeading={global.ctaHeading} ctaBlurb={global.ctaBlurb} ctaBackground={global.ctaBackground} />
 
             </m.div>
 

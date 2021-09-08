@@ -3,7 +3,8 @@ import Container from '@/components/container'
 
 function ProductListings({ products }) {
   return (
-      <div className="flex-wrap max-w-screen-xl mx-auto mb-8 md:flex md:mb-12 lg:mb-16">
+      <Container>
+      <div className="flex-wrap mx-auto mb-8 md:flex md:mb-12 lg:mb-16">
 
         {products.map((product, i) => {
           return (
@@ -19,6 +20,7 @@ function ProductListings({ products }) {
           )            
         })}
       </div>
+      </Container>
       
   )
 }
