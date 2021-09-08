@@ -39,7 +39,7 @@ export default function ShippingDelivery({ global, page }) {
                 
                 <div className="flex-wrap py-10 mx-auto lg:py-20 lg:flex">
                   
-                  <div className="relative h-auto bg-black lg:w-1/2 min-h-[40vw] mb-8 lg:mb-0">
+                  <div className="relative h-auto bg-black lg:w-1/2 min-h-[40vw] lg:min-h-0 mb-8 lg:mb-0">
                     {/* <Image
                         {...heroBackgroundProps}
                         alt=""

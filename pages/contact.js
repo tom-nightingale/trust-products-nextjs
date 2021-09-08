@@ -35,7 +35,7 @@ export default function Contact({ global }) {
                     
                     <div className="relative order-2 mt-8 bg-black/10 lg:w-1/2">
 
-                      <iframe className="min-h-[40vw]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.069916628486!2d-1.3221973483209855!3d53.019106106773734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879ecbd0616de47%3A0xfa91205448a62a08!2sTrust%20Precision%20Engineering!5e0!3m2!1sen!2suk!4v1631119673554!5m2!1sen!2suk" width="100%" height="100%" AllowFullScreen="" loading="lazy"></iframe>
+                      <iframe className="min-h-[40vw] lg:min-h-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.069916628486!2d-1.3221973483209855!3d53.019106106773734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879ecbd0616de47%3A0xfa91205448a62a08!2sTrust%20Precision%20Engineering!5e0!3m2!1sen!2suk!4v1631119673554!5m2!1sen!2suk" width="100%" height="100%" AllowFullScreen="" loading="lazy"></iframe>
                       
                     </div>
                     
