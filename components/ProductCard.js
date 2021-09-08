@@ -52,7 +52,7 @@ function ProductCard({ product, alt }) {
 
             </div>
 
-            <div className="relative mt-10 lg:mt-0 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
+            <div className="relative px-8 mt-10 lg:mt-0 md:flex md:justify-center md:flex-col lg:p-12 xl:p-20 md:w-1/2">
 
               <Dots classes={`-z-10 w-[300px] h-[300px] hidden md:block absolute top-0 ${alt ? 'left-0' : 'right-0' }`} />
 

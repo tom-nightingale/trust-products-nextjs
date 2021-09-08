@@ -45,13 +45,19 @@ export default function Contact({ global }) {
                         
                         <p>If you have any questions about our services, products or shipping please contact us using the details below and one of our team members will get back to you as soon as possible.</p>
 
-                        <p>Trust Precision Products</p>
+                        <p>
+                          <address className="not-italic">
+                              <span className="block font-black" property="name">Trust Precision Products</span>
+                              <span className="block" property="addressLocality">Unit 2 Meadowbank Court</span>
+                              <span className="block" property="addressRegion">Nottinghamshire</span>
+                              <span className="block" property="postalCode">NG16 3SL</span>
+                              <span className="block" property="addressCountry">United Kingdom</span>
+                          </address>
+                        </p>
 
-                        <p>Address</p>
+                        <p>Telephone: <a href="tel:01773719239" className="inline-block no-underline hover:underline focus:underline">01773 719 239</a></p>
 
-                        <p>Telephone: </p>
-
-                        <p>Email: </p>
+                        <p>Email: <a href="mailto:test@test.com" className="inline-block no-underline break-words hover:underline focus:underline">test@test.com</a></p>
 
                         <p className="text-xs opacity-75">Fields marked with a * are required.</p>
                       

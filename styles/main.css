@@ -121,6 +121,7 @@ form {
     @apply w-full p-2 border border-black;
   }
 }
-form input {
-  @apply p-2 border border-black;
+
+form input[type=submit] {
+  @apply cursor-pointer;
 }

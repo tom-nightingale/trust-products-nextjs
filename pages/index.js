@@ -107,8 +107,9 @@ export default function Home({ global, home, products }) {
             </Container>
 
             
-
-            <ProductListings products={products} /> 
+            {/* <div className="text-white bg-black"> */}
+              <ProductListings products={products} /> 
+            {/* </div> */}
 
             <CtaShipping ctaHeading={global.ctaHeading} ctaBlurb={global.ctaBlurb} ctaBackground={global.ctaBackground} />
 
