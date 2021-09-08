@@ -30,8 +30,6 @@ export default function Home({ global, home, products }) {
 		home.contentImage
 	);
 
-  console.log(home.contentImage);
-
   return (
     <Layout>
       
