@@ -25,6 +25,13 @@ export default function Home({ global, home, products }) {
 		home.heroBackgroundImage
 	);
 
+  const contentImageProps = useNextSanityImage(
+		sanity,
+		home.contentImage
+	);
+
+  console.log(home.contentImage);
+
   return (
     <Layout>
       
@@ -88,11 +95,11 @@ export default function Home({ global, home, products }) {
                 
                 <div className="relative lg:w-1/2 min-h-[40vw] lg:min-h-0 mb-8 lg:mb-0">
                   <Image
-                      {...heroBackgroundProps}
+                      {...contentImageProps}
                       alt=""
                       layout="fill"
                       objectFit="cover"
-                      className="z-10 duration-500 ease-in-out transform"
+                      className="z-10 duration-500 ease-in-out transform opacity-50 grayscale md:grayscale-0 lg:opacity-90"
                     />
                 </div>
                 
@@ -138,6 +145,9 @@ const homeQuery = `*[_type == "home"][0]
     },
     contentHeading,
     content,
+    contentImage {
+      asset ->
+    },
     seo {
       ...,
       shareGraphic {

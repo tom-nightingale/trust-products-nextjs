@@ -1,9 +1,12 @@
 import sanity from "@/lib/sanity"
 import BlockContent from '@sanity/block-content-to-react'
+import { useNextSanityImage } from 'next-sanity-image';
 import { getAllProductsInCollection } from '@/lib/shopify'
 
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+
+
 
 import Container from "@/components/container";
 import Layout from '@/components/layout'
@@ -16,6 +19,11 @@ import { fade } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 
 export default function ShippingDelivery({ global, page }) {
+
+  const contentImageProps = useNextSanityImage(
+		sanity,
+		page.contentImage
+	);
   
   return (
 
@@ -40,13 +48,13 @@ export default function ShippingDelivery({ global, page }) {
                 <div className="flex-wrap py-10 mx-auto lg:py-20 lg:flex">
                   
                   <div className="relative h-auto bg-black lg:w-1/2 min-h-[40vw] lg:min-h-0 mb-8 lg:mb-0">
-                    {/* <Image
-                        {...heroBackgroundProps}
+                    <Image
+                        {...contentImageProps}
                         alt=""
                         layout="fill"
                         objectFit="cover"
                         className="z-10 duration-500 ease-in-out transform"
-                      /> */}
+                      />
                   </div>
                   
                   <div className="lg:w-1/2 content lg:p-12 xl:p-20">
@@ -74,7 +82,7 @@ export default function ShippingDelivery({ global, page }) {
   )
 }
 
-const pageQuery = `*[_type == "shippingDelivery"][0] 
+const pageQuery = `*[_type == "shipping-delivery"][0] 
   {
     _id,
     title,
@@ -85,6 +93,9 @@ const pageQuery = `*[_type == "shippingDelivery"][0]
     },
     contentHeading,
     content,
+    contentImage {
+      asset ->
+    },
     seo {
       ...,
       shareGraphic {
