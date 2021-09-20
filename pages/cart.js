@@ -1,16 +1,21 @@
-import { NextSeo } from 'next-seo'
+import sanity from "@/lib/sanity"
+import { useCartContext } from '@/context/Store'
+
 import Layout from '@/components/layout'
 import Header from '@/components/header'
-import { fade } from '@/helpers/transitions'
+import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
 import CartTable from '@/components/CartTable'
 import CheckOutButton from '@/components/CheckOutButton'
 import BackToProductButton from '@/components/BackToProductButton'
-import { useCartContext } from '@/context/Store'
 
-function CartPage() {
-  const [cart, checkoutUrl] = useCartContext()
+import { fade } from '@/helpers/transitions'
+import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { NextSeo } from 'next-seo'
+
+
+export default function CartPage({ global }) {
+  const [cart, checkoutUrl] = useCartContext();
 
   return (
 
@@ -18,7 +23,7 @@ function CartPage() {
 
       <NextSeo title="Cart | Trust Precision Engineering" />
 
-      <Header />
+      <Header bannerContent={global.fixedBannerContent} />
 
       <LazyMotion features={domAnimation}>
         
@@ -53,8 +58,28 @@ function CartPage() {
 
       </LazyMotion>
 
+      <Footer />
+
     </Layout>
   )
 }
 
-export default CartPage
+const globalQuery = `*[_type == "global"][0] 
+  {
+    fixedBannerContent,
+    ctaBackground {
+      asset ->
+    },
+    ctaHeading,
+    ctaBlurb
+  }
+`;
+
+export async function getStaticProps() {
+  const global = await sanity.fetch(globalQuery);
+  return {
+    props: {
+      global
+    },
+  }
+}
